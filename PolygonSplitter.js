@@ -1,6 +1,6 @@
 class PolygonSplitter {
   /**
-   * 使用折线切割多边形
+   * 折线切割多边形
    */
   static split(polygon, polyline) {
     this._validateInput(polygon, polyline);
@@ -139,8 +139,7 @@ class PolygonSplitter {
 
     newPoly.push(newPoly[0]);
 
-    // 3. 如果依然没有找到 i0 或 i1，抛错提示：  
-    //    这样可以快速定位是点没插到多边形上
+    // 3. 如果没有找到 i0 或 i1，抛错提示：  
     if (i0 < 0 || i1 < 0) {
       throw new Error(`切割点 (${i0 < 0 ? 'pin' : 'pout'}) 未能在多边形边界找到合适位置`);
     }
