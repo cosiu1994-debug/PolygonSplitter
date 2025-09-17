@@ -20,3 +20,15 @@ cd PolygonSplitter
 
 # Or install via npm if published
 npm install polygon-splitter
+
+
+Usage
+const PolygonSplitter = require('polygon-splitter');
+
+const polygon = [[0,0],[10,0],[10,10],[0,10],[0,0]]; // must be closed
+const polyline = [[5,-1],[5,11]];
+
+const [polyA, polyB] = PolygonSplitter.split(polygon, polyline);
+
+console.log('Polygon A:', polyA);
+console.log('Polygon B:', polyB);
