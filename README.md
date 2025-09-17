@@ -32,3 +32,31 @@ const [polyA, polyB] = PolygonSplitter.split(polygon, polyline);
 
 console.log('Polygon A:', polyA);
 console.log('Polygon B:', polyB);
+
+
+API
+PolygonSplitter.split(polygon, polyline)
+
+polygon: Array of [x, y] points, must be closed (first point = last point)
+
+polyline: Array of [x, y] points, at least 2 points
+
+returns: [PolygonA, PolygonB] — two closed polygons
+
+Other internal methods (for reference):
+
+_validateInput(poly, cutter)
+
+_approxEqual(a, b, eps)
+
+_closePolygon(p)
+
+_pointInPolygon(pt, poly)
+
+_pointOnSegment(p, a, b, eps)
+
+_lineIntersection(A, B, C, D)
+
+_interpPoint(A, B, poly)
+
+_insertPoints(poly, pin, pout)
